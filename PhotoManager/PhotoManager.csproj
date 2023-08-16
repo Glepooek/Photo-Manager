@@ -63,10 +63,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WPFControlsLibrary">
-      <HintPath>C:\Users\Vimal Kumar\Downloads\WPFRichEditorLibrary_0.0.0.6_src\WPFRichEditorLibrary\lib\WPFControlsLibrary.dll</HintPath>
+      <HintPath>..\Libs\WPFControlsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="WPFMitsuControls">
-      <HintPath>..\..\..\..\SJSU\cs235\wpfbookcontrol-24122\WPFMitsuControls\bin\Debug\WPFMitsuControls.dll</HintPath>
+      <HintPath>..\Libs\WPFMitsuControls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

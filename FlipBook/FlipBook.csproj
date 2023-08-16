@@ -53,7 +53,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WPFMitsuControls">
-      <HintPath>..\..\..\..\SJSU\cs235\wpfbookcontrol-24122\WPFMitsuControls\bin\Debug\WPFMitsuControls.dll</HintPath>
+      <HintPath>..\Libs\WPFMitsuControls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
