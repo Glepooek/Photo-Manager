@@ -2,7 +2,6 @@
     x:Class="FlipBook.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:WPFMitsuControls;assembly=WPFMitsuControls"
     xmlns:local="clr-namespace:FlipBook"
     Title="MainWindow"
     Width="525"

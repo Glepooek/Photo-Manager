@@ -8,14 +8,9 @@ namespace FlipBook
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Control _currentUser;
         public MainWindow()
         {
             InitializeComponent();
-            _currentUser = new UserControl1();
-            grid1.Children.Add(_currentUser);
         }
-
-
     }
 }
