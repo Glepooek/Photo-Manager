@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.Threading;
 
 namespace PhotoManager
 {
@@ -25,26 +14,30 @@ namespace PhotoManager
         {
             InitializeComponent();
             Visibility = Visibility.Hidden;
-
         }
+
         private bool _hideRequest = false;
         private bool _result = false;
         private UIElement _parent;
 
-         public void SetParent(UIElement parent)
-           {
-              _parent = parent;
-          }
+        public void SetParent(UIElement parent)
+        {
+            _parent = parent;
+        }
 
         public string Message
         {
             get { return (string)GetValue(MessageProperty); }
             set { SetValue(MessageProperty, value); }
         }
-        public static readonly DependencyProperty MessageProperty =
-        DependencyProperty.Register(
-            "Message", typeof(string), typeof(SyncOption),
-            new UIPropertyMetadata(string.Empty));
+
+        public static readonly DependencyProperty MessageProperty = DependencyProperty.Register(
+            "Message",
+            typeof(string),
+            typeof(SyncOption),
+            new UIPropertyMetadata(string.Empty)
+        );
+
         public bool ShowHandlerDialog(string message)
         {
             Message = message;
@@ -56,8 +49,7 @@ namespace PhotoManager
             while (!_hideRequest)
             {
                 // HACK: Stop the thread if the application is about to close
-                if (this.Dispatcher.HasShutdownStarted ||
-                    this.Dispatcher.HasShutdownFinished)
+                if (this.Dispatcher.HasShutdownStarted || this.Dispatcher.HasShutdownFinished)
                 {
                     break;
                 }
@@ -65,7 +57,8 @@ namespace PhotoManager
                 // HACK: Simulate "DoEvents"
                 this.Dispatcher.Invoke(
                     DispatcherPriority.Background,
-                    new ThreadStart(delegate { }));
+                    new ThreadStart(delegate { })
+                );
                 Thread.Sleep(20);
             }
 
@@ -77,6 +70,7 @@ namespace PhotoManager
             _result = false;
             HideHandlerDialog();
         }
+
         private void HideHandlerDialog()
         {
             _hideRequest = true;

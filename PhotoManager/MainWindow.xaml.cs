@@ -23,8 +23,6 @@ namespace PhotoManager
         {
             InitializeComponent();
             //SyncOption.SetParent(parentgrid);
-
-
         }
 
         private void CreateCollage()
@@ -32,20 +30,18 @@ namespace PhotoManager
             if (EventAction.Equals("Collage"))
             {
                 Random rand = new Random(DateTime.Now.Millisecond);
-                List<Uri> uriSource = new List<Uri>(){
-                 new Uri(@".\Collage\tiles.jpg",UriKind.Relative),
-                      new Uri(@".\AlbumPhoto\1.jpg",UriKind.Relative),
-                       new Uri(@".\AlbumPhoto\2.jpg",UriKind.Relative),
-                        new Uri(@".\AlbumPhoto\3.jpg",UriKind.Relative),
-                         new Uri(@".\AlbumPhoto\4.jpg",UriKind.Relative),
-
-            };
+                List<Uri> uriSource = new List<Uri>()
+                {
+                    new Uri(@".\Collage\tiles.jpg", UriKind.Relative),
+                    new Uri(@".\AlbumPhoto\1.jpg", UriKind.Relative),
+                    new Uri(@".\AlbumPhoto\2.jpg", UriKind.Relative),
+                    new Uri(@".\AlbumPhoto\3.jpg", UriKind.Relative),
+                    new Uri(@".\AlbumPhoto\4.jpg", UriKind.Relative),
+                };
 
                 ImageBrush ib = new ImageBrush();
                 ib.ImageSource = new BitmapImage(uriSource[0]);
                 canvas.Background = ib;
-
-
 
                 Image img = new Image();
                 img.Width = 200;
@@ -132,10 +128,15 @@ namespace PhotoManager
                 y_canvas = y;
             }
         }
+
         bool captured = false;
-        double x_shape, x_canvas, y_shape, y_canvas;
+        double x_shape,
+            x_canvas,
+            y_shape,
+            y_canvas;
         UIElement source = null;
         string EventAction = string.Empty;
+
         void img_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             source = (UIElement)sender;
@@ -157,23 +158,66 @@ namespace PhotoManager
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
-            // Set filter for file extension and default file extension 
+            // Set filter for file extension and default file extension
             dlg.DefaultExt = ".png";
-            dlg.Filter = "JPEG Files (*.jpeg)|*.jpg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+            dlg.Filter =
+                "JPEG Files (*.jpeg)|*.jpg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
             dlg.Multiselect = true;
 
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
             {
                 List<PhotoSelected> items = new List<PhotoSelected>();
-                items.Add(new PhotoSelected() { ImageName = "Chrysanthemum.jpg", ImagePath = @".\AlbumPhoto\1.jpg" });
-                items.Add(new PhotoSelected() { ImageName = "Desert.jpg", ImagePath = @".\AlbumPhoto\2.jpg" });
-                items.Add(new PhotoSelected() { ImageName = "Hydrangeas.jpg", ImagePath = @".\AlbumPhoto\3.jpg" });
-                items.Add(new PhotoSelected() { ImageName = "Jellyfish.jpg", ImagePath = @".\AlbumPhoto\4.jpg" });
+                items.Add(
+                    new PhotoSelected()
+                    {
+                        ImageName = "Chrysanthemum.jpg",
+                        ImagePath = @".\AlbumPhoto\1.jpg"
+                    }
+                );
+                items.Add(
+                    new PhotoSelected()
+                    {
+                        ImageName = "Desert.jpg",
+                        ImagePath = @".\AlbumPhoto\2.jpg"
+                    }
+                );
+                items.Add(
+                    new PhotoSelected()
+                    {
+                        ImageName = "Hydrangeas.jpg",
+                        ImagePath = @".\AlbumPhoto\3.jpg"
+                    }
+                );
+                items.Add(
+                    new PhotoSelected()
+                    {
+                        ImageName = "Jellyfish.jpg",
+                        ImagePath = @".\AlbumPhoto\4.jpg"
+                    }
+                );
 
-                items.Add(new PhotoSelected() { ImageName = "Lighthouse.jpg", ImagePath = @".\AlbumPhoto\5.jpg" });
-                items.Add(new PhotoSelected() { ImageName = "Penguins.jpg", ImagePath = @".\AlbumPhoto\6.jpg" });
-                items.Add(new PhotoSelected() { ImageName = "Tulips.jpg", ImagePath = @".\AlbumPhoto\7.jpg" });
+                items.Add(
+                    new PhotoSelected()
+                    {
+                        ImageName = "Lighthouse.jpg",
+                        ImagePath = @".\AlbumPhoto\5.jpg"
+                    }
+                );
+                items.Add(
+                    new PhotoSelected()
+                    {
+                        ImageName = "Penguins.jpg",
+                        ImagePath = @".\AlbumPhoto\6.jpg"
+                    }
+                );
+                items.Add(
+                    new PhotoSelected()
+                    {
+                        ImageName = "Tulips.jpg",
+                        ImagePath = @".\AlbumPhoto\7.jpg"
+                    }
+                );
 
                 lvDataBinding.ItemsSource = items;
             }
@@ -187,24 +231,69 @@ namespace PhotoManager
             templateDataBinding.UnselectAll();
             templateDataBinding.Items.Clear();
             List<PhotoSelected> templpateitems = new List<PhotoSelected>();
-            templpateitems.Add(new PhotoSelected() { ImageName = "Collage1", ImagePath = @".\Collage\Collage1.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Collage2", ImagePath = @".\Collage\Collage2.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Collage3", ImagePath = @".\Collage\Collage3.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Collage4", ImagePath = @".\Collage\Collage4.jpg" });
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Collage1",
+                    ImagePath = @".\Collage\Collage1.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Collage2",
+                    ImagePath = @".\Collage\Collage2.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Collage3",
+                    ImagePath = @".\Collage\Collage3.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Collage4",
+                    ImagePath = @".\Collage\Collage4.jpg"
+                }
+            );
 
-            templpateitems.Add(new PhotoSelected() { ImageName = "Collage5", ImagePath = @".\Collage\Collage5.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Collage6", ImagePath = @".\Collage\Collage6.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Collage7", ImagePath = @".\Collage\Collage7.jpg" });
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Collage5",
+                    ImagePath = @".\Collage\Collage5.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Collage6",
+                    ImagePath = @".\Collage\Collage6.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Collage7",
+                    ImagePath = @".\Collage\Collage7.jpg"
+                }
+            );
 
             templateDataBinding.ItemsSource = templpateitems;
 
             //CreateCollage();
         }
 
-        private void templateDataBinding_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void templateDataBinding_SelectionChanged(
+            object sender,
+            SelectionChangedEventArgs e
+        )
         {
-            if (e.AddedItems.Count!=0)
-            CreateCollage();
+            if (e.AddedItems.Count != 0)
+                CreateCollage();
         }
 
         private void RibbonButton_Click_2(object sender, RoutedEventArgs e)
@@ -228,19 +317,45 @@ namespace PhotoManager
         {
             MyPopup.IsOpen = false;
         }
+
         private Control _control;
+
         private void RibbonButton_Click_4(object sender, RoutedEventArgs e)
         {
             EventAction = "PhotoBook";
-           // templateDataBinding.UnselectAll();
-           // templateDataBinding.DataSource = null;
-          
+            // templateDataBinding.UnselectAll();
+            // templateDataBinding.DataSource = null;
+
             //templateDataBinding.Items.Clear();
             List<PhotoSelected> templpateitems = new List<PhotoSelected>();
-            templpateitems.Add(new PhotoSelected() { ImageName = "Photo Book1", ImagePath = @".\images\PBook1.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Photo Book2", ImagePath = @".\images\PBook2.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Photo Book3", ImagePath = @".\images\PBook3.jpg" });
-            templpateitems.Add(new PhotoSelected() { ImageName = "Photo Book4", ImagePath = @".\images\PBook4.jpg" });
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Photo Book1",
+                    ImagePath = @".\images\PBook1.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Photo Book2",
+                    ImagePath = @".\images\PBook2.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Photo Book3",
+                    ImagePath = @".\images\PBook3.jpg"
+                }
+            );
+            templpateitems.Add(
+                new PhotoSelected()
+                {
+                    ImageName = "Photo Book4",
+                    ImagePath = @".\images\PBook4.jpg"
+                }
+            );
 
             templateDataBinding.ItemsSource = null;
             templateDataBinding.UnselectAll();
@@ -248,9 +363,9 @@ namespace PhotoManager
 
             templateDataBinding.Items.Clear();
             templateDataBinding.ItemsSource = templpateitems;
-            
         }
     }
+
     public class PhotoSelected
     {
         public int ID { get; set; }
