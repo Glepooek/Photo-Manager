@@ -162,16 +162,32 @@
     <Resource Include="Images\openfolder.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Collage\tiles.jpg" />
+    <Content Include="Collage\tiles.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Collage\Collage1.jpg" />
-    <Resource Include="Collage\Collage2.jpg" />
-    <Resource Include="Collage\Collage3.jpg" />
-    <Resource Include="Collage\Collage4.jpg" />
-    <Resource Include="Collage\Collage5.jpg" />
-    <Resource Include="Collage\Collage6.jpg" />
-    <Resource Include="Collage\collage7.jpg" />
+    <Content Include="Collage\Collage1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Collage\Collage2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Collage\Collage3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Collage\Collage4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Collage\Collage5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Collage\Collage6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Collage\collage7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MyComputer.jpg" />
