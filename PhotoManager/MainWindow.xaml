@@ -21,7 +21,6 @@
             <my:Ribbon.QuickAccessToolBar>
                 <my:RibbonQuickAccessToolBar>
                     <my:RibbonButton x:Name="Save" SmallImageSource="/PhotoManager;component/Images/save.png" />
-
                 </my:RibbonQuickAccessToolBar>
             </my:Ribbon.QuickAccessToolBar>
             <my:Ribbon.ApplicationMenu>

@@ -217,9 +217,7 @@
   <ItemGroup>
     <Resource Include="Images\close.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="photoalbum\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="AlbumPhoto\1.jpg" />
     <Resource Include="AlbumPhoto\2.jpg" />
